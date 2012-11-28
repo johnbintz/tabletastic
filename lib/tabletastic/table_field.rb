@@ -4,7 +4,7 @@ module Tabletastic
   class TableField
     @@association_methods = %w[to_label display_name full_name name title username login value to_str to_s]
 
-    attr_reader :heading, :method, :method_or_proc, :cell_html, :heading_html, :klass
+    attr_reader :heading, :method, :method_or_proc, :klass
 
     def initialize(*args, &proc)
       options = args.extract_options!
@@ -27,7 +27,22 @@ module Tabletastic
       result.send(to_string) if to_string
     end
 
+    def cell_html
+      append_method_to_classes(@cell_html)
+    end
+
+    def heading_html
+      append_method_to_classes(@heading_html)
+    end
+
     private
+    def append_method_to_classes(options)
+      options = (options or {}).dup
+      options[:class] ||= ''
+      options[:class] << " " << @method.to_s
+      options[:class].strip!
+      options
+    end
 
     def default_heading
       I18n.translate(method, :scope => i18n_scope, :default => klass_default_heading)

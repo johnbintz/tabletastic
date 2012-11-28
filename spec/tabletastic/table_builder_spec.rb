@@ -30,9 +30,9 @@ describe Tabletastic::TableBuilder do
         output_buffer.should have_table_with_tag("th", :count => 2)
       end
 
-      it { output_buffer.should have_table_with_tag("th", "Title") }
+      it { output_buffer.should have_table_with_tag("th.title", "Title") }
 
-      it { output_buffer.should have_table_with_tag("th", "Body") }
+      it { output_buffer.should have_table_with_tag("th.body", "Body") }
 
       it { output_buffer.should have_table_with_tag("tbody") }
 
@@ -43,8 +43,8 @@ describe Tabletastic::TableBuilder do
       end
 
       it "should have data for each field" do
-        output_buffer.should have_table_with_tag("td", "The title of the post")
-        output_buffer.should have_table_with_tag("td", "Lorem ipsum")
+        output_buffer.should have_table_with_tag("td.title", "The title of the post")
+        output_buffer.should have_table_with_tag("td.body", "Lorem ipsum")
       end
 
       it { output_buffer.should have_table_with_tag("tr#post_#{@post.id}") }

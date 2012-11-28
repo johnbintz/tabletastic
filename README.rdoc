@@ -104,26 +104,26 @@ will produce html like this:
   <table id="posts">
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Body</th>
-        <th>Author</th>
+        <th class="title">Title</th>
+        <th class="body">Body</th>
+        <th class="author">Author</th>
       </tr>
     </thead>
     <tbody>
       <tr class="post odd" id="post_1">
-        <td>Something</td>
-        <td>Lorem ipsum dolor sit amet consequat. Duis aute irure dolor.</td>
-        <td>Jim Beam</td>
+        <td class="title">Something</td>
+        <td class="body"Lorem ipsum dolor sit amet consequat. Duis aute irure dolor.</td>
+        <td class="author">Jim Beam</td>
       </tr>
       <tr class="post even" id="post_2">
-        <td>Second Post</td>
-        <td>This is the second post</td>
-        <td>Jack Daniels</td>
+        <td class="title"Second Post</td>
+        <td class="body">This is the second post</td>
+        <td class="author">Jack Daniels</td>
       </tr>
       <tr class="post odd" id="post_3">
-        <td>Something else</td>
-        <td>Blah!</td>
-        <td></td>
+        <td class="title"Something else</td>
+        <td class="body">Blah!</td>
+        <td class="author"></td>
       </tr>
     </tbody>
   </table>
@@ -141,26 +141,26 @@ will produce html like:
   <table id="posts">
     <thead>
       <tr>
-        <th>Author</th>
+        <th class="author">Author</th>
         <th>Title</th>
         <th>Created at</th>
       </tr>
     </thead>
     <tbody>
       <tr id="post_1" class="post odd">
-        <td>Jim Beam</td>
-        <td>Something</td>
-        <td>2009-11-15 02:42:48 UTC</td>
+        <td class="author">Jim Beam</td>
+        <td class="title">Something</td>
+        <td class="created_at">2009-11-15 02:42:48 UTC</td>
       </tr>
       <tr id="post_2" class="post even">
-        <td>Jack Daniels</td>
-        <td>Second Post</td>
-        <td>2009-11-16 00:11:00 UTC</td>
+        <td class="author">Jack Daniels</td>
+        <td class="title">Second Post</td>
+        <td class="created_at">2009-11-16 00:11:00 UTC</td>
       </tr>
       <tr id="post_3" class="post odd">
-        <td></td>
-        <td>Something else</td>
-        <td>2009-11-16 00:11:30 UTC</td>
+        <td class="author"></td>
+        <td class="title">Something else</td>
+        <td class="created_at">2009-11-16 00:11:30 UTC</td>
       </tr>
     </tbody>
   </table>
@@ -180,9 +180,9 @@ will product html like:
   <table id="posts">
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Content</th>
-        <th>Author</th>
+        <th class="title">Title</th>
+        <th class="content">Content</th>
+        <th class="author">Author</th>
         <th></th>
         <th></th>
         <th></th>
@@ -190,9 +190,9 @@ will product html like:
     </thead>
     <tbody>
       <tr class="post odd" id="post_1">
-        <td class="titlestring">Something</td>
-        <td>Lorem ipsum dolor sit amet,...</td>
-        <td>
+        <td class="titlestring title">Something</td>
+        <td class="content">Lorem ipsum dolor sit amet,...</td>
+        <td class="author">
           <a href="/authors/1">Jim Bean</a>
         </td>
         <td class="actions show_link">
@@ -206,9 +206,9 @@ will product html like:
         </td>
       </tr>
       <tr class="post even" id="post_2">
-        <td class="titlestring">Second Post</td>
-        <td>This is the second post</td>
-        <td>
+        <td class="titlestring title">Second Post</td>
+        <td class="content">This is the second post</td>
+        <td class="author">
           <a href="/authors/2">Jack Daniels</a>
         </td>
         <td class="actions show_link">
@@ -222,9 +222,9 @@ will product html like:
         </td>
       </tr>
       <tr class="post odd" id="post_3">
-        <td class="titlestring">Something else</td>
-        <td>Blah!</td>
-        <td></td>
+        <td class="titlestring title">Something else</td>
+        <td class="content">Blah!</td>
+        <td class="author"></td>
         <td class="actions show_link">
           <a href="/posts/3">Show</a>
         </td>
